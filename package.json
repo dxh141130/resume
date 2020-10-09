@@ -1,7 +1,7 @@
 {
   "name": "alex-resume",
   "version": "0.1.0",
-  "homepage": "http://dxh141130.github.io/resume",
+  "homepage": "https://dxh141130.github.io/resume",
   "private": true,
   "dependencies": {
     "jquery": "^3.2.1",
