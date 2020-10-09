@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
+import {inject, observer} from "mobx-react";
 
+@inject("appStore")
+@observer
 class Header extends Component {
   render() {
-
-    if(this.props.data){
-      var name = this.props.data.name;
-      var occupation= this.props.data.occupation;
-      var description= this.props.data.description;
-      var city= this.props.data.address.city;
-      var networks= this.props.data.social.map(function(network){
-        return <li key={network.name}><a href={network.url}><i className={network.className}></i></a></li>
-      })
-    }
 
     return (
       <header id="home">
@@ -32,16 +25,18 @@ class Header extends Component {
 
       </nav>
 
-      <div className="row banner">
-         <div className="banner-text">
-            <h1 className="responsive-headline">I'm {name}.</h1>
-            <h3>I'm a {city} based <span>{occupation}</span>. {description}.</h3>
-            <hr />
-            <ul className="social">
-               {networks}
-            </ul>
-         </div>
-      </div>
+          <div className="row banner">
+              <div className="banner-text">
+                  <h1 className="responsive-headline">{this.props.appStore.info.name}</h1>
+                  <h3>I am a full stack Software-Engineer and certified application Solution-Architecture.</h3>
+                  <hr/>
+                  <ul className="social">
+                      {this.props.appStore.info.networks.map((network)=>{
+                          return <li key={network.name}><a href={network.url}><i className={network.icon}></i></a></li>
+                      })}
+                  </ul>
+              </div>
+          </div>
 
       <p className="scrolldown">
          <a className="smoothscroll" href="#about"><i className="icon-down-circle"></i></a>

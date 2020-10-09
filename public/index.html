@@ -1,204 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <title>Alex Huang Profile</title>
-  </head>
+</head>
 
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-
-
-
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.1/jquery-migrate.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-   <script type="text/javascript">
-       jQuery(document).ready(function($) {
-
-           /*----------------------------------------------------*/
-           /* FitText Settings
-           ------------------------------------------------------ */
-
-           setTimeout(function() {
-               $('h1.responsive-headline').fitText(1, { minFontSize: '40px', maxFontSize: '90px' });
-           }, 100);
+<body>
+<noscript>
+    You need to enable JavaScript to run this app.
+</noscript>
+<div id="root"></div>
 
 
-           /*----------------------------------------------------*/
-           /* Smooth Scrolling
-           ------------------------------------------------------ */
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.1/jquery-migrate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
 
-           $('.smoothscroll').on('click',function (e) {
-               e.preventDefault();
+        /*----------------------------------------------------*/
+        /* FitText Settings
+        ------------------------------------------------------ */
 
-               var target = this.hash,
-                   $target = $(target);
-
-               $('html, body').stop().animate({
-                   'scrollTop': $target.offset().top
-               }, 800, 'swing', function () {
-                   window.location.hash = target;
-               });
-           });
-
-
-           /*----------------------------------------------------*/
-           /* Highlight the current section in the navigation bar
-           ------------------------------------------------------*/
-
-           var sections = $("section");
-           var navigation_links = $("#nav-wrap a");
-
-           sections.waypoint({
-
-               handler: function(event, direction) {
-
-                   var active_section;
-
-                   active_section = $(this);
-                   if (direction === "up") active_section = active_section.prev();
-
-                   var active_link = $('#nav-wrap a[href="#' + active_section.attr("id") + '"]');
-
-                   navigation_links.parent().removeClass("current");
-                   active_link.parent().addClass("current");
-
-               },
-               offset: '35%'
-
-           });
+        setTimeout(function () {
+            $('h1.responsive-headline').fitText(1, {minFontSize: '40px', maxFontSize: '90px'});
+        }, 100);
 
 
-           /*----------------------------------------------------*/
-           /*	Make sure that #header-background-image height is
-           /* equal to the browser height.
-           ------------------------------------------------------ */
+        /*----------------------------------------------------*/
+        /* Smooth Scrolling
+        ------------------------------------------------------ */
 
-           $('header').css({ 'height': $(window).height() });
-           $(window).on('resize', function() {
+        $('.smoothscroll').on('click', function (e) {
+            e.preventDefault();
 
-               $('header').css({ 'height': $(window).height() });
-               $('body').css({ 'width': $(window).width() })
-           });
+            var target = this.hash,
+                $target = $(target);
 
-
-           /*----------------------------------------------------*/
-           /*	Fade In/Out Primary Navigation
-           ------------------------------------------------------*/
-
-           $(window).on('scroll', function() {
-
-               var h = $('header').height();
-               var y = $(window).scrollTop();
-               var nav = $('#nav-wrap');
-
-               if ( (y > h*.20) && (y < h) && ($(window).outerWidth() > 768 ) ) {
-                   nav.fadeOut('fast');
-               }
-               else {
-                   if (y < h*.20) {
-                       nav.removeClass('opaque').fadeIn('fast');
-                   }
-                   else {
-                       nav.addClass('opaque').fadeIn('fast');
-                   }
-               }
-
-           });
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 800, 'swing', function () {
+                window.location.hash = target;
+            });
+        });
 
 
-           /*----------------------------------------------------*/
-           /*	Modal Popup
-           ------------------------------------------------------*/
+        /*----------------------------------------------------*/
+        /* Highlight the current section in the navigation bar
+        ------------------------------------------------------*/
 
-           $('.item-wrap a').magnificPopup({
+        var sections = $("section");
+        var navigation_links = $("#nav-wrap a");
 
-               type:'inline',
-               fixedContentPos: false,
-               removalDelay: 200,
-               showCloseBtn: false,
-               mainClass: 'mfp-fade'
+        sections.waypoint({
 
-           });
+            handler: function (event, direction) {
 
-           $(document).on('click', '.popup-modal-dismiss', function (e) {
-               e.preventDefault();
-               $.magnificPopup.close();
-           });
+                var active_section;
+
+                active_section = $(this);
+                if (direction === "up") active_section = active_section.prev();
+
+                var active_link = $('#nav-wrap a[href="#' + active_section.attr("id") + '"]');
+
+                navigation_links.parent().removeClass("current");
+                active_link.parent().addClass("current");
+
+            },
+            offset: '35%'
+
+        });
 
 
-           /*----------------------------------------------------*/
-           /*	Flexslider
-           /*----------------------------------------------------*/
-           $('.flexslider').flexslider({
-               namespace: "flex-",
-               controlsContainer: ".flex-container",
-               animation: 'slide',
-               controlNav: true,
-               directionNav: false,
-               smoothHeight: true,
-               slideshowSpeed: 7000,
-               animationSpeed: 600,
-               randomize: false,
-           });
+        /*----------------------------------------------------*/
+        /*	Make sure that #header-background-image height is
+        /* equal to the browser height.
+        ------------------------------------------------------ */
 
-           /*----------------------------------------------------*/
-           /*	contact form
-           ------------------------------------------------------*/
+        $('header').css({'height': $(window).height()});
+        $(window).on('resize', function () {
 
-           $('form#contactForm button.submit').click(function() {
+            $('header').css({'height': $(window).height()});
+            $('body').css({'width': $(window).width()})
+        });
 
-               $('#image-loader').fadeIn();
 
-               var contactName = $('#contactForm #contactName').val();
-               var contactEmail = $('#contactForm #contactEmail').val();
-               var contactSubject = $('#contactForm #contactSubject').val();
-               var contactMessage = $('#contactForm #contactMessage').val();
+        /*----------------------------------------------------*/
+        /*	Fade In/Out Primary Navigation
+        ------------------------------------------------------*/
 
-               var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
-                   '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
+        $(window).on('scroll', function () {
 
-               $.ajax({
+            var h = $('header').height();
+            var y = $(window).scrollTop();
+            var nav = $('#nav-wrap');
 
-                   type: "POST",
-                   url: "inc/sendEmail.php",
-                   data: data,
-                   success: function(msg) {
+            if ((y > h * .20) && (y < h) && ($(window).outerWidth() > 768)) {
+                nav.fadeOut('fast');
+            } else {
+                if (y < h * .20) {
+                    nav.removeClass('opaque').fadeIn('fast');
+                } else {
+                    nav.addClass('opaque').fadeIn('fast');
+                }
+            }
 
-                       // Message was sent
-                       if (msg == 'OK') {
-                           $('#image-loader').fadeOut();
-                           $('#message-warning').hide();
-                           $('#contactForm').fadeOut();
-                           $('#message-success').fadeIn();
-                       }
-                       // There was an error
-                       else {
-                           $('#image-loader').fadeOut();
-                           $('#message-warning').html(msg);
-                           $('#message-warning').fadeIn();
-                       }
+        });
 
-                   }
 
-               });
-               return false;
-           });
-       });
-   </script>
+        /*----------------------------------------------------*/
+        /*	Modal Popup
+        ------------------------------------------------------*/
 
-  </body>
+        $('.item-wrap a').magnificPopup({
+
+            type: 'inline',
+            fixedContentPos: false,
+            removalDelay: 200,
+            showCloseBtn: false,
+            mainClass: 'mfp-fade'
+
+        });
+
+        $(document).on('click', '.popup-modal-dismiss', function (e) {
+            e.preventDefault();
+            $.magnificPopup.close();
+        });
+
+
+        /*----------------------------------------------------*/
+        /*	Flexslider
+        /*----------------------------------------------------*/
+        $('.flexslider').flexslider({
+            namespace: "flex-",
+            controlsContainer: ".flex-container",
+            animation: 'slide',
+            controlNav: true,
+            directionNav: false,
+            smoothHeight: true,
+            slideshowSpeed: 7000,
+            animationSpeed: 600,
+            randomize: false,
+        });
+
+        /*----------------------------------------------------*/
+        /*	contact form
+        ------------------------------------------------------*/
+
+        $('form#contactForm button.submit').click(function () {
+
+            $('#image-loader').fadeIn();
+
+            var contactName = $('#contactForm #contactName').val();
+            var contactEmail = $('#contactForm #contactEmail').val();
+            var contactSubject = $('#contactForm #contactSubject').val();
+            var contactMessage = $('#contactForm #contactMessage').val();
+
+            var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
+                '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
+
+            $.ajax({
+
+                type: "POST",
+                url: "inc/sendEmail.php",
+                data: data,
+                success: function (msg) {
+
+                    // Message was sent
+                    if (msg == 'OK') {
+                        $('#image-loader').fadeOut();
+                        $('#message-warning').hide();
+                        $('#contactForm').fadeOut();
+                        $('#message-success').fadeIn();
+                    }
+                    // There was an error
+                    else {
+                        $('#image-loader').fadeOut();
+                        $('#message-warning').html(msg);
+                        $('#message-warning').fadeIn();
+                    }
+
+                }
+
+            });
+            return false;
+        });
+    });
+</script>
+
+</body>
 </html>
