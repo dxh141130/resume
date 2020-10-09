@@ -1,0 +1,42 @@
+{
+  "name": "alex-resume",
+  "version": "0.1.0",
+  "homepage": "http://dxh141130.github.io/resume",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "mobx": "^6.0.1",
+    "mobx-react": "^7.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-ga": "^3.1.2",
+    "react-scripts": "3.4.3"
+  },
+ "scripts": {
+  "predeploy": "npm run build",
+  "start": "react-app-rewired start",
+  "build": "react-app-rewired build",
+  "deploy": "gh-pages -d build"
+},
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "customize-cra": "^1.0.0",
+    "gh-pages": "^3.1.0",
+    "react-app-rewired": "^2.1.6"
+  }
+}
