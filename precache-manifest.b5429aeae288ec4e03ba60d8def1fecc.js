@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dc0ee76c97dd16ab06848db1f3be2899",
+    "revision": "54e6184597bac1bbe899380a2dea6e99",
     "url": "/resume/index.html"
   },
   {
-    "revision": "f3e06ce00438ca9188f5",
+    "revision": "0d0daae339beabfe9fe9",
     "url": "/resume/static/css/main.d59d3abe.chunk.css"
   },
   {
-    "revision": "b75b5d7418cae454dfec",
-    "url": "/resume/static/js/2.1c64342b.chunk.js"
+    "revision": "39dcde5b896207a7a336",
+    "url": "/resume/static/js/2.c455981d.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/resume/static/js/2.1c64342b.chunk.js.LICENSE.txt"
+    "url": "/resume/static/js/2.c455981d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f3e06ce00438ca9188f5",
-    "url": "/resume/static/js/main.7d136fcc.chunk.js"
+    "revision": "0d0daae339beabfe9fe9",
+    "url": "/resume/static/js/main.ce07e624.chunk.js"
   },
   {
     "revision": "c3d54fa9aab8d1a3eb08",
     "url": "/resume/static/js/runtime-main.65c81bb1.js"
+  },
+  {
+    "revision": "15577f70dd2b2b1d9857e7f4aed19784",
+    "url": "/resume/static/media/AWS-Solution-Architect.15577f70.png"
   },
   {
     "revision": "1d9c7945c7bc7dd0909105119bfbc191",
