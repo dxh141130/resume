@@ -6,7 +6,6 @@ import Header from "./components/Header";
 import About from "./components/About";
 import Resume from "./components/Resume";
 import Portfolio from "./components/Portfolio";
-import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import './assets/css/media-queries.css';
@@ -36,7 +35,6 @@ class EntryPoint extends Component {
                     <About />
                     <Resume />
                     <Portfolio />
-                    <Testimonials />
                     <Contact />
                     <Footer />
                 </div>
